@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-22T09:19:08.125Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="U-1V-dX1VGMPinuoX1cY" version="13.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-22T10:02:28.140Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="kgHxA5BEm0IotG-84lkx" version="13.7.3" type="github">
   <diagram id="UBAOlTxNl-PGV2mwaTn4" name="Page-1">
     <mxGraphModel dx="898" dy="721" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -10,7 +10,7 @@
         <mxCell id="YqibsNEsLwpjpXMUSmtw-75" style="edgeStyle=orthogonalEdgeStyle;fontSize=11;html=1;endArrow=ERzeroToMany;endFill=1;fontFamily=Helvetica;fontColor=#000000;align=center;strokeColor=#000000;" edge="1" parent="1" source="AULpBvCMR0s7PoRBH__7-6" target="YqibsNEsLwpjpXMUSmtw-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="AULpBvCMR0s7PoRBH__7-6" value="user" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="AULpBvCMR0s7PoRBH__7-6" value="users" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="80" y="120" width="180" height="280" as="geometry" />
         </mxCell>
         <mxCell id="AULpBvCMR0s7PoRBH__7-7" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="AULpBvCMR0s7PoRBH__7-6" vertex="1">
@@ -93,7 +93,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="YqibsNEsLwpjpXMUSmtw-19" value="product" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="YqibsNEsLwpjpXMUSmtw-19" value="products" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="570" y="120" width="180" height="370" as="geometry" />
         </mxCell>
         <mxCell id="YqibsNEsLwpjpXMUSmtw-20" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-19">
@@ -195,7 +195,7 @@
         <mxCell id="YqibsNEsLwpjpXMUSmtw-52" value="comment_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-50">
           <mxGeometry x="30" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YqibsNEsLwpjpXMUSmtw-53" value="comment" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="YqibsNEsLwpjpXMUSmtw-53" value="comments" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="310" y="490" width="180" height="160" as="geometry" />
         </mxCell>
         <mxCell id="YqibsNEsLwpjpXMUSmtw-54" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-53">
