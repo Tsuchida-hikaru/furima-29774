@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-22T09:11:26.590Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="9FD7MNduYR_Hnn1hNzJ9" version="13.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-22T09:14:33.402Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="ztqhGYJ-o_bJvAJV9hTp" version="13.7.3" type="github">
   <diagram id="UBAOlTxNl-PGV2mwaTn4" name="Page-1">
     <mxGraphModel dx="898" dy="721" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -233,6 +233,9 @@
         </mxCell>
         <mxCell id="YqibsNEsLwpjpXMUSmtw-65" value="product_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-63">
           <mxGeometry x="30" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YqibsNEsLwpjpXMUSmtw-84" value="FURIMA-29774 ER図" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="20" width="240" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
