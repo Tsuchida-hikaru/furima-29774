@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-22T11:53:47.566Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="2rmOd_j8G_6lgEGik9tx" version="13.7.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-22T12:04:27.489Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="x50RWQeb8rjzIKE1rUfO" version="13.7.3" type="github">
   <diagram id="UBAOlTxNl-PGV2mwaTn4" name="Page-1">
     <mxGraphModel dx="898" dy="721" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -252,7 +252,7 @@
         <mxCell id="YqibsNEsLwpjpXMUSmtw-102" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-101">
           <mxGeometry width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YqibsNEsLwpjpXMUSmtw-103" value="purchase_date_and_time" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-101">
+        <mxCell id="YqibsNEsLwpjpXMUSmtw-103" value="date_and_time" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="YqibsNEsLwpjpXMUSmtw-101">
           <mxGeometry x="30" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="YqibsNEsLwpjpXMUSmtw-104" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;fontFamily=Helvetica;fontColor=#000000;align=center;strokeColor=#000000;" edge="1" parent="1" target="YqibsNEsLwpjpXMUSmtw-88">
