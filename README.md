@@ -13,7 +13,7 @@
 - アソシエーション
   - has_many :products
   - has_many :comments
-  - has_one  :purchase
+  - has_many :purchases
 
 ## products テーブル
 | Column             | Type      | Options     |
@@ -129,7 +129,7 @@
   - belongs_to :comment
 ```
 
-## purchase テーブル
+## purchases テーブル
 | Column   | Type     | Options                        |
 | -------  | -------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
@@ -139,7 +139,7 @@
   - belongs_to :product
   - has_one :address
 
-## address テーブル
+## addresses テーブル
 | Column   | Type     | Options                        |
 | -------  | -------- | ------------------------------ |
 | postal_code | string | null: false |
