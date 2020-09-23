@@ -4,16 +4,16 @@
 | -------- | ------     | ----------- |
 | first_name  | string     | null: false |
 | family_name | string     | null: false |
+| furigana_first_name  | string     | null: false |
+| furigana_family_name | string     | null: false |
 | email    | string     | null: false |
 | password | string     | null: false |
 | nickname | string     | null: false |
 | birthday | date       | null: false |
-| product_id  | references | null: false, foreign_key: true |
-| comment_id  | references | null: false, foreign_key: true |
 - アソシエーション
   - has_many :products
   - has_many :comments
-  - has_one
+  - has_one  :purchase
 
 ## products テーブル
 | Column             | Type      | Options     |
@@ -21,14 +21,13 @@
 | name               | string    | null: false |
 | description        | text      | null: false |
 | price              | integer   | null: false, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 |
-| category           | integer   | null: false |
-| condition          | integer   | null: false |
-| delivery_fee       | integer   | null: false |
-| ship-from_location | integer   | null: false |
-| shipping-time      | integer   | null: false |
-| sold               | integer   | null: false |
-| user_id               | references | null: false, foreign_key: true |
-| comment_id            | references | null: false, foreign_key: true |
+| category_id        | integer   | null: false |
+| condition_id       | integer   | null: false |
+| delivery_fee_id    | integer   | null: false |
+| ship_from_location_id | integer   | null: false |
+| shipping_time_id   | integer   | null: false |
+| sold_id            | integer   | null: false |
+| user               | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :user
   - has_many :comments
@@ -118,26 +117,45 @@
     - 2~3日で発送
     - 4~7日で発送
 
+```
+## コメント機能を実装する際に使用
 ## comments テーブル
 | Column  | Type     | Options                        |
 | ------- | -------- | ------------------------------ |
 | comment | text     |                                |
-| user_id    | references | null: false, foreign_key: true |
-| room_id    | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| product | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :user
   - belongs_to :comment
+```
 
 ## purchase テーブル
 | Column   | Type     | Options                        |
 | -------  | -------- | ------------------------------ |
-| address  | text     | null: false, foreign_key: true |
-| datetime | datetime | null: false, foreign_key: true |
-| user_id    | references | null: false, foreign_key: true |
-| room_id    | references | null: false, foreign_key: true |
+| user     | references | null: false, foreign_key: true |
+| product  | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :user
   - belongs_to :product
+  - has_one :address
+
+## address テーブル
+| Column   | Type     | Options                        |
+| -------  | -------- | ------------------------------ |
+| first_name  | string | null: false |
+| family_name | string | null: false |
+| furigana_first_name  | string | null: false |
+| furigana_family_name | string | null: false |
+| postal_code | string | null: false |
+| prefecture_id | integer | null: false|
+| city | string | null: false |
+| address_number | string | null: false |
+| apartment_number | string | null: false |
+| phone_number | string | null: false |
+| purchase    | references | null: false, foreign_key: true |
+- アソシエーション
+  - belongs_to :purchase
 
 ## Ruby version
 2.6.5
