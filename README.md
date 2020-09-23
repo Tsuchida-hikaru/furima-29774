@@ -20,13 +20,12 @@
 | ------             | ------    | ----------- |
 | name               | string    | null: false |
 | description        | text      | null: false |
-| price              | integer   | null: false, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 |
+| price              | integer   | null: false |
 | category_id        | integer   | null: false |
 | condition_id       | integer   | null: false |
 | delivery_fee_id    | integer   | null: false |
-| ship_from_location_id | integer   | null: false |
+| prefecture_id      | integer   | null: false |
 | shipping_time_id   | integer   | null: false |
-| sold_id            | integer   | null: false |
 | user               | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :user
@@ -61,7 +60,7 @@
     - 着払い（購入者負担）
     - 送料込み（出品者負担）
   
-  - ship-from_location
+  - prefecture
     - '---'
     - 北海道
     - 青森県
@@ -143,15 +142,11 @@
 ## address テーブル
 | Column   | Type     | Options                        |
 | -------  | -------- | ------------------------------ |
-| first_name  | string | null: false |
-| family_name | string | null: false |
-| furigana_first_name  | string | null: false |
-| furigana_family_name | string | null: false |
 | postal_code | string | null: false |
 | prefecture_id | integer | null: false|
 | city | string | null: false |
 | address_number | string | null: false |
-| apartment_number | string | null: false |
+| apartment_number | string |  |
 | phone_number | string | null: false |
 | purchase    | references | null: false, foreign_key: true |
 - アソシエーション
