@@ -35,8 +35,6 @@ RSpec.describe User, type: :model do
         @user.furigana_family_name = "ア"
         expect(@user).to be_valid
       end
-      it '適切な値が入力された時、情報が受け入れられエラーメッセージは表示されない' do
-      end
     end
 
     context '新規登録がうまくいかない時' do
@@ -287,13 +285,17 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday is invalid. Input half-size numerical character.")
       end
-      it '適切ではない値が入力された時、情報は受け入れられずエラーメッセージが表示される' do
-      end
     end
   end
 
   describe 'ログイン時' do
-    
-
+    context 'ログイン成功' do
+      it '' do
+      end
+    end
+    context 'ログイン失敗' do
+      it '' do
+      end
+    end
   end
 end

@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def index
   end
 
-
   private
 
   def move_to_index
