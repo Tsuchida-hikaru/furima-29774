@@ -1,2 +1,0 @@
-class CategoryId < ApplicationRecord
-end

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  # before_action :move_to_index, except: [:index]
 
   def index
+    @products = Product.order("created_at DESC")
   end
 
   def new
@@ -9,7 +10,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
+    @product = Product.create(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
@@ -18,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :category_id, :condition_id, :delivery_fee_id, :perefecture_id, :shipping_time_id, :user)
+    params.require(:product).permit(:name, :description, :price, :category_id, :condition_id, :delivery_fee_id, :perefecture_id, :shipping_time_id, :user, :content, :image).merge(user_id: current_user.id)
   end
+  
 end
