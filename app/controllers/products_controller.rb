@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  # before_action :move_to_index, except: [:index]
+class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index]
 
   def index
     @products = Product.order("created_at DESC")
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to products_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :category_id, :condition_id, :delivery_fee_id, :perefecture_id, :shipping_time_id, :user, :content, :image).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :price, :category_id, :condition_id, :delivery_fee_id, :prefecture_id, :shipping_time_id, :user, :content, :image).merge(user_id: current_user.id)
   end
-  
+
 end
