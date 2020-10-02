@@ -13,4 +13,6 @@ class User < ApplicationRecord
     validates :furigana_family_name, format: { with: /\A[ァ-ヶー－]+\z/, message: 'is invalid. Input full-width katakana characters.' }
     validates :birthday, format: { with: /\A[0-9\-]+\z/, message: 'is invalid. Input half-size numerical character.' }
   end
+
+  has_many :products
 end
