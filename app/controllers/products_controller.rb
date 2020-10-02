@@ -18,11 +18,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def tax_calc
-    price = Product.find(params[:id])
-    render json: { post: price }
-  end
-
   private
   def move_to_index
     redirect_to action: :index unless user_signed_in?
