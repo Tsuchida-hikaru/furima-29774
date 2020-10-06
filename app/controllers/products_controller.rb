@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:edit, :show, :update]
+  before_action :seller_checker, only: [:edit, :update]
 
   def index
     @products = Product.order('created_at DESC')
@@ -22,6 +23,17 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
+  end
+
   private
 
   def move_to_index
@@ -34,5 +46,11 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def seller_checker
+    if current_user.id != @product.user.id
+      redirect_to action: :index
+    end
   end
 end
