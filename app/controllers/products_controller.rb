@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
+  before_action :set_product, only: [:show]
 
   def index
     @products = Product.order('created_at DESC')
@@ -18,6 +19,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def move_to_index
@@ -26,5 +30,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :category_id, :condition_id, :delivery_fee_id, :prefecture_id, :shipping_time_id, :user, :content, :image).merge(user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
