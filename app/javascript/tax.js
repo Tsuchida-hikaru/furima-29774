@@ -11,4 +11,7 @@ function tax_calc(){
     profit_field.innerHTML = profit;
   });
 }
-window.addEventListener("load", tax_calc);
+
+if(document.URL.match('/products/new', '/products/.*/edit')){
+  window.addEventListener("load", tax_calc);
+}
