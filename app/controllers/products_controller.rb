@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:edit, :show]
+  before_action :set_product, only: [:edit, :show, :update]
 
   def index
     @products = Product.order('created_at DESC')
@@ -23,10 +23,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @product.user.id
+      redirect_to action: :index
+    end
   end
 
   def update
-    @product = Product.find(params[:id])
     @product.update(product_params)
     if @product.save
       redirect_to action: :index
