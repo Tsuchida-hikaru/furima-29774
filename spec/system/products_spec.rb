@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Products", type: :system do
+RSpec.describe 'Products', type: :system do
   describe '商品出品機能' do
     before do
       @product = FactoryBot.create(:product)
@@ -28,15 +28,15 @@ RSpec.describe "Products", type: :system do
         select @product.shipping_time.name, from: 'item-shipping-time'
         fill_in 'item-price', with: @product.price
         # 「出品する」ボタンを押すと、productモデルのカウントが1上がることを確認する
-        expect{
+        expect  do
           find('input[name="commit"]').click
-        }.to change { Product.count }.by(1)
+        end.to change { Product.count }.by(1)
         # トップページへ遷移する
         expect(current_path).to eq products_path
         # トップページに先ほど出品した商品の名前が表示されることを確認する
         expect(page).to have_content(@product.name)
         # トップページに先ほど出品した商品の画像が表示されることを確認する
-        expect(page).to have_selector(".item-img")
+        expect(page).to have_selector('.item-img')
       end
     end
 
@@ -62,8 +62,7 @@ RSpec.describe "Products", type: :system do
       # 商品出品ページへ移動しようとすると、新規会員登録画面に遷移することを確認する
     end
   end
-  
+
   describe '' do
   end
-
 end
