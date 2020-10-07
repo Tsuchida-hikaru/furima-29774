@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:edit, :show, :update]
-  before_action :seller_checker, only: [:edit, :update]
+  before_action :set_product, only: [:edit, :show, :update, :destory]
+  before_action :seller_checker, only: [:edit, :update, :destory]
 
   def index
     @products = Product.order('created_at DESC')
@@ -34,6 +34,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.destroy
+      redirect_to action: :index
+    else
+      render :show
+    end
+  end
+
   private
 
   def move_to_index
@@ -49,8 +58,6 @@ class ProductsController < ApplicationController
   end
 
   def seller_checker
-    if current_user.id != @product.user.id
-      redirect_to action: :index
-    end
+    redirect_to action: :index if current_user.id != @product.user.id
   end
 end
