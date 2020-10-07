@@ -148,7 +148,7 @@
 | address_number | string | null: false |
 | apartment_number | string |  |
 | phone_number | string | null: false |
-| purchase    | references | null: false, foreign_key: true |
+| order    | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :orders
 
