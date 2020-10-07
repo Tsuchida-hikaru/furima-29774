@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:edit, :show, :update, :destory]
-  before_action :seller_checker, only: [:edit, :update, :destory]
+  before_action :set_product, only: [:edit, :show, :update, :destroy]
+  before_action :seller_checker, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.order('created_at DESC')
@@ -35,8 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    if product.destroy
+    if @product.destroy
       redirect_to action: :index
     else
       render :show

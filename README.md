@@ -13,7 +13,7 @@
 - アソシエーション
   - has_many :products
   - has_many :comments
-  - has_many :purchases
+  - has_many :orders
 
 ## products テーブル
 | Column             | Type      | Options     |
@@ -30,7 +30,7 @@
 - アソシエーション
   - belongs_to :user
   - has_many :comments
-  - has_one :purchase
+  - has_one :orders
 
 - アクティブハッシュ
   - category
@@ -126,10 +126,10 @@
 | product | references | null: false, foreign_key: true |
 - アソシエーション
   - belongs_to :user
-  - belongs_to :comment
+  - belongs_to :product
 ```
 
-## purchases テーブル
+## orders テーブル
 | Column   | Type     | Options                        |
 | -------  | -------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
@@ -150,7 +150,7 @@
 | phone_number | string | null: false |
 | purchase    | references | null: false, foreign_key: true |
 - アソシエーション
-  - belongs_to :purchase
+  - belongs_to :orders
 
 ## Ruby version
 2.6.5
