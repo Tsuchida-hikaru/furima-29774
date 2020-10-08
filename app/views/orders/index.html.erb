@@ -1,6 +1,10 @@
 <%= render "shared/second-header"%>
 
 <div class='transaction-contents'>
+  <%# エラーメッセージの表示 %>
+  <%= render 'shared/error_messages', model: @order_address %>
+  <%# /エラーメッセージの表示 %>
+
   <div class='transaction-main'>
     <h1 class='transaction-title-text'>
       購入内容の確認
@@ -31,10 +35,7 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with model: @order_address, url: order_index_path, id: 'charge-form', class: 'transaction-form-wrap',local: true) do |f| %>
-    <%# エラーメッセージの表示 %>
-    <%= render 'error_messages', model: @order_address %>
-    <%# /エラーメッセージの表示 %>
+    <%= form_with model: @order_address, url: product_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
