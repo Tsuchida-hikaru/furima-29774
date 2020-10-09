@@ -1,17 +1,22 @@
 class OrdersController < ApplicationController
 
   def index
-    order = Order.new
     @product = Product.find(product_params)
     @order_address = OrderAddress.new
   end
 
   def create
-    binding.pry
-    @order_address = OrderAddress.new(order_adress_params)
+    @product = Product.find(product_params)
+    @order_address = OrderAddress.new(order_address_params)
     if @order_address.valid?
+      Payjp.api_key = "sk_test_9f0087ff892e5beb907d82a1"
+      Payjp::Charge.create(
+        amount: order_address_params[:price],
+        card: order_address_params[:token],
+        currency: 'jpy'
+      )
       @order_address.save
-      return redirect_to product_path
+      return redirect_to root_path
     else
       render action: :index
     end
@@ -23,8 +28,7 @@ class OrdersController < ApplicationController
     params.require(:product_id)
   end
 
-  def order_adress_params
-    params.require(:order_address).permit(:user, :product, :postal_code, :prefecture, :city, :address_number, :apartment_number, :phone_number, :product_id).merge(user_id: current_user.id)
+  def order_address_params
+    params.require(:order_address).permit(:user, :product, :postal_code, :prefecture_id, :city, :address_number, :apartment_number, :phone_number).merge(token: params[:token], price: @product.price, user_id: current_user.id, product_id: :product_id)
   end
-
 end
