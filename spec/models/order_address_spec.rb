@@ -67,12 +67,12 @@ RSpec.describe OrderAddress, type: :model do
       it '電話番号に全角数字が使用されている' do
         @order_address.phone_number = '０９０12345678'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include('Phone number 半角数字のみ使用出来ます。ハイフンは不要です')
+        expect(@order_address.errors.full_messages).to include('Phone number 10桁から11桁の半角数字のみ使用出来ます。ハイフンは不要です')
       end
       it '電話番号に半角数字以外の文字が使用されている' do
         @order_address.phone_number = '090-1234-5678'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include('Phone number 半角数字のみ使用出来ます。ハイフンは不要です')
+        expect(@order_address.errors.full_messages).to include('Phone number 10桁から11桁の半角数字のみ使用出来ます。ハイフンは不要です')
       end
       it 'tokenが空' do
         @order_address.token = ''
