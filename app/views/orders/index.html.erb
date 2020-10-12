@@ -1,11 +1,11 @@
 <%= render "shared/second-header"%>
 
 <div class='transaction-contents'>
-  <%# エラーメッセージの表示 %>
-  <%= render 'shared/error_messages', model: @order_address %>
-  <%# /エラーメッセージの表示 %>
 
   <div class='transaction-main'>
+    <%# エラーメッセージの表示 %>
+    <%= render 'shared/error_messages', model: @order_address %>
+    <%# /エラーメッセージの表示 %>
     <h1 class='transaction-title-text'>
       購入内容の確認
     </h1>

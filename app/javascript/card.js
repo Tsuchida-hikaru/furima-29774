@@ -29,7 +29,10 @@ const pay = () => {
       document.getElementById("card-exp-year").removeAttribute("name");
 
       document.getElementById("charge-form").submit();
+      document.getElementById("charge-form").reset();
     });
+
+
   });
 };
 
