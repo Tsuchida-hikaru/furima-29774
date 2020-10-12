@@ -11,6 +11,11 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address).to be_valid
       end
+      it 'Address情報の建物名以外が全て記入出来ていたら、orderとaddressテーブルに保存が出来ること' do
+        @order_address.apartment_number = ''
+        @order_address.valid?
+        expect(@order_address).to be_valid
+      end
     end
 
     context '商品購入失敗時' do
@@ -54,11 +59,6 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Address number can't be blank")
       end
-      it '建物名が空' do
-        @order_address.apartment_number = ''
-        @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Apartment number can't be blank")
-      end
       it '電話番号が空' do
         @order_address.phone_number = ''
         @order_address.valid?
@@ -78,6 +78,16 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.token = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空' do
+        @order_address.user_id = ''
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("User can't be blank")
+      end
+      it 'product_idが空' do
+        @order_address.product_id = ''
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Product can't be blank")
       end
     end
   end

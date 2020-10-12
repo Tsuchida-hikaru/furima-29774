@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_081243) do
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "address_number", null: false
-    t.string "apartment_number", null: false
+    t.string "apartment_number"
     t.string "phone_number", null: false
     t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false

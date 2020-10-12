@@ -7,7 +7,6 @@ class OrderAddress
     validates :city
     validates :prefecture_id, numericality: { other_than: 1, message: '初期値以外を選択してください' }
     validates :address_number
-    validates :apartment_number
     validates :phone_number, format: { with: /\A\d{10}$|^\d{11}\z/, message: '10桁から11桁の半角数字のみ使用出来ます。ハイフンは不要です' }
     validates :price, :user_id, :product_id, :token
   end
