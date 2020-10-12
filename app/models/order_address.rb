@@ -10,8 +10,8 @@ class OrderAddress
     validates :phone_number, format: { with: /\A[0-9]+\z/, message: '半角数字のみ使用出来ます。ハイフンは不要です' }
     validates :price, :user_id, :product_id, :token
   end
-  
-  validates :prefecture_id, numericality: { other_than: 1, message: '初期値以外を選択してください'}
+
+  validates :prefecture_id, numericality: { other_than: 1, message: '初期値以外を選択してください' }
 
   def save
     order = Order.create(user_id: user_id, product_id: product_id)
