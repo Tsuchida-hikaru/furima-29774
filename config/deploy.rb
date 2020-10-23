@@ -1,7 +1,7 @@
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.14.1'
 # Capistranoのログの表示に利用する
-set :application, 'Furima-29774'
+set :application, 'furima-29774'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'https://github.com/Tsuchida-hikaru/furima-29774.git'
 # バージョンが変わっても共通で参照するディレクトリを指定
